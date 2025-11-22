@@ -11,7 +11,7 @@ import java.io.IOException;
 import com.api.pojo.UserCredentials;
 import static com.api.utils.ConfigManager.*;
 
-public class LoginApiTest {
+public class LoginAPITest {
 
 	@Test
 	public void loginAPITest() throws IOException {
