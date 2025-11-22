@@ -21,4 +21,5 @@ public class LoginApiTest {
 				.when().post("login").then().log().all().statusCode(200).and().body("message", equalTo("Success")).and()
 				.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
 	}
+	
 }
