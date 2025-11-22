@@ -15,22 +15,10 @@ public class LoginApiTest {
 
 	@Test
 	public void loginAPITest() throws IOException {
-		UserCredentials userCredentials= new UserCredentials("iamfd", "password");
-		
-		given()
-			.baseUri(getProperty("BASEURI"))
-			.and()
-			.contentType(ContentType.JSON)
-			.body(userCredentials)
-			.log().all()
-		.when()
-			.post("login")
-		.then()  
-			.log().all()
-			.statusCode(200)
-			.and()
-			.body("message", equalTo("Success"))
-			.and()
-			.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
+		UserCredentials userCredentials = new UserCredentials("iamfd", "password");
+
+		given().baseUri(getProperty("BASEURI")).and().contentType(ContentType.JSON).body(userCredentials).log().all()
+				.when().post("login").then().log().all().statusCode(200).and().body("message", equalTo("Success")).and()
+				.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
 	}
 }

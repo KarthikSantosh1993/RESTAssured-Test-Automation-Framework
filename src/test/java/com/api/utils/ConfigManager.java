@@ -8,18 +8,20 @@ import java.util.Properties;
 
 public class ConfigManager {
 	// WAP to read the properties file from config.properties
-	// Special Class in Java: Properties class
 	private static Properties properties = new Properties();
 	private static String path = "config" + File.separator + "config.properties";
 	public static String env;
 
 	private ConfigManager() {
+		//Private Constructor !!!
 	}
 
 	static {
 		env = System.getProperty("env", "qa");
 		env = env.toLowerCase().trim();
-		System.out.println("======================> " + env);
+		System.out.println("---------------------");
+		System.out.println("Environment: " + env);
+		System.out.println("---------------------");
 		switch (env) {
 		case "dev" -> path = "config" + File.separator + "config.dev.properties";
 		case "qa" -> path = "config" + File.separator + "config.qa.properties";
