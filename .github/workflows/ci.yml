@@ -22,14 +22,14 @@ on:
         description: "Select an environment"
         type: choice 
         options: [qa,uat,dev]
-        default: qa
+        default: "qa"
         required: true
       
       suiteXmlFile:
         description: "Select a TestNG.xml File"
         type: choice 
         options: [testng.xml,smoke.xml,regression.xml]
-        default: testng.xml
+        default: "testng.xml"
         required: true
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
         cache: maven
     
     - name: Execute Test Automation Framework
-      run: mvn clean test  -DsuiteXmlFile="${{ github.event.inputs.suiteXmlFile || testng.xml }}" -Denv="${{ github.event.inputs.env || qa }}"
+      run: mvn clean test  -DsuiteXmlFile="${{ github.event.inputs.suiteXmlFile }}" -Denv="${{ github.event.inputs.env }}"
 
     - name: Upload a Build Artifact
       if: always()
