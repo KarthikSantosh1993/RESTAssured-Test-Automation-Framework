@@ -1,25 +1,23 @@
 package com.api.tests;
 
-import static com.api.constants.Role.FD;
-import static com.api.utils.AuthTokenProvider.getToken;
-import static com.api.utils.ConfigManager.getProperty;
+import static com.api.constants.Role.*;
+import static io.restassured.RestAssured.*;
 
 import java.io.IOException;
 
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
-import io.restassured.RestAssured;
+import com.api.utils.SpecUtil;
+
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class MasterAPIRequestTest {
 
 	@Test
 	public void masterAPIRequest() throws IOException {
-		RestAssured.given().baseUri(getProperty("BASEURI")).header("Authorization", getToken(FD)).contentType("") // default
-																													// content-type
-																													// application/url-formencoded
-				.log().all().when().post("master").then().log().all().statusCode(200).time(Matchers.lessThan(1000L))
+		given().spec(SpecUtil.requestSpecificationWithAuth(FD)) 	// application/url-formencoded	
+		.when().post("master").then().spec(SpecUtil.responseSpec_OK())
 				.body("message", Matchers.equalTo("Success")).body("data", Matchers.notNullValue())
 				.body("data", Matchers.hasKey("mst_oem")).body("$", Matchers.hasKey("message"))
 				.body("data.mst_oem.size()", Matchers.equalTo(2)) // check size of JSON Array
@@ -30,7 +28,6 @@ public class MasterAPIRequestTest {
 	
 	@Test
 	public void invalidTokenMasterAPirequest() throws IOException {
-		RestAssured.given().baseUri(getProperty("BASEURI")).header("Authorization", "").contentType("") // default
-				.log().all().when().post("master").then().log().all().statusCode(401);
+		given().spec(SpecUtil.requestSpec()).when().post("master").then().spec(SpecUtil.responseSpec_HTML(401));
 	}
 }
