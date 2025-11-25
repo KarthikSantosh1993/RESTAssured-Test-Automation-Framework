@@ -1,17 +1,17 @@
-package com.demo.csv;
+package com.dataproviders.api.bean;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class UserCredsModel {
+public class UserBean {
 	@CsvBindByName(column = "username")
 	private String username;
 	@CsvBindByName(column = "password")
 	private String password;
 	
-	public UserCredsModel() {
+	public UserBean() {
 		
 	}
-	public UserCredsModel(String username, String password) {
+	public UserBean(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
