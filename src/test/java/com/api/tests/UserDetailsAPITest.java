@@ -7,20 +7,17 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import com.api.utils.SpecUtil;
+import static com.api.utils.SpecUtil.*;
 
-import io.restassured.module.jsv.JsonSchemaValidator;
+import static io.restassured.module.jsv.JsonSchemaValidator.*;
 
 public class UserDetailsAPITest {
 
-	@Test
+	@Test(description="Verify userdetails API response is shown correctly", groups = {"api", "smoke", "regression"})
 	public void userDetailsAPItest() throws IOException {
 		
-		given()
-		.spec(SpecUtil.requestSpecificationWithAuth(FD))
-		.when().get("userdetails/").
-		
-		then().spec(SpecUtil.responseSpec_OK()).body(JsonSchemaValidator
-						.matchesJsonSchemaInClasspath("response-schema/UserDetailsResponseSchema.json"));
+		given().spec(requestSpecificationWithAuth(FD))
+		.when().get("userdetails/")
+		.then().spec(responseSpec_OK()).body(matchesJsonSchemaInClasspath("response-schema/UserDetailsResponseSchema.json"));
 	}
 }
