@@ -35,5 +35,4 @@ public class CountAPITest {
 		.when().get("dashboard/count")
 		.then().spec(responseSpec_HTML(401));
 	}
-	
 }
