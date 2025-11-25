@@ -1,6 +1,7 @@
 package com.api.utils;
 
-import org.joda.time.Instant;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 public class DataTimeUtil {
 
@@ -9,7 +10,7 @@ public class DataTimeUtil {
 	}
 
 	public static String getTimeWithDaysAgo(int days) {
-		return Instant.now().minus(days).toString();
+		return Instant.now().minus(days,ChronoUnit.DAYS).toString();
 		
 	}
 }
