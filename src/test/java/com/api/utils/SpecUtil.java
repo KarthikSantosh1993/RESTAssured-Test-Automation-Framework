@@ -42,10 +42,16 @@ public class SpecUtil {
 	}
 
 	// Common request sections (method) for POST. PUT, PATCH
-	public static RequestSpecification requestSpec(Object userCred) throws IOException {
-		RequestSpecification request = new RequestSpecBuilder().setBaseUri(ConfigManager.getProperty("BASEURI"))
-				.setContentType(ContentType.JSON).setAccept(ContentType.JSON).setBody(userCred).log(LogDetail.URI)
-				.log(LogDetail.METHOD).log(LogDetail.HEADERS).log(LogDetail.BODY).build();
+	public static RequestSpecification requestSpec(Object userCred) {
+		RequestSpecification request = null;
+		try {
+			request = new RequestSpecBuilder().setBaseUri(ConfigManager.getProperty("BASEURI"))
+					.setContentType(ContentType.JSON).setAccept(ContentType.JSON).setBody(userCred).log(LogDetail.URI)
+					.log(LogDetail.METHOD).log(LogDetail.HEADERS).log(LogDetail.BODY).build();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return request;
 	}
