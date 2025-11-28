@@ -1,4 +1,4 @@
-package com.api.tests.datadriven;
+package com.api.tests;
 
 import static com.api.utils.SpecUtil.requestSpecificationWithAuth;
 import static com.api.utils.SpecUtil.responseSpec_OK;
@@ -9,17 +9,24 @@ import static org.hamcrest.Matchers.startsWith;
 
 import java.io.IOException;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.api.constants.Role;
 import com.api.request.model.CreateJobPayload;
+import com.api.utils.FakerDataGenerator;
 
-public class CreateJobAPIDataDrivenTest {
+public class CreateJobAPIWithFakeDataTest {
+	private CreateJobPayload createJobPayload;
 	
 	
-	@Test(description="Verify Create job API response is shown correctly", groups = {"api", "datadriven", "regression", "csv"}, dataProviderClass = com.dataproviders.DataProviderUtils.class, dataProvider= "CreateJobDataProvider")
-	public void createJobAPITest(CreateJobPayload createJobPayload) throws IOException {
-
+	@BeforeMethod(description= "Creating createjobapirequest payload")
+	public void setup() {
+		createJobPayload= FakerDataGenerator.generateFakeCreateJobData();
+	}
+	
+	@Test(description="Verify Create job API response is shown correctly", groups = {"api", "smoke", "regression"})
+	public void createJobAPITest() throws IOException {
 		given().spec(requestSpecificationWithAuth(Role.FD, createJobPayload)).when().post("/job/create").then()
 				.spec(responseSpec_OK())
 				.body(matchesJsonSchemaInClasspath("response-schema/CreateJobAPIResponseSchema.json"))

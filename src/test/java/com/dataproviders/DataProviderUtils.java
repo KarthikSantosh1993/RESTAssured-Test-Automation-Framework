@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import com.api.request.model.CreateJobPayload;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
+import com.api.utils.FakerDataGenerator;
 import com.dataproviders.api.bean.CreateJobBean;
 import com.dataproviders.api.bean.UserBean;
 
@@ -33,5 +34,13 @@ public class DataProviderUtils {
 		}
 
 		return payloadList.iterator();
+	}
+	
+	@DataProvider(name = "CreateJobFakerDataProvider", parallel = true)
+	public static Iterator<CreateJobPayload> createJobFakerDataProvider() {
+		String fakerCount = System.getProperty("fakercount", "5");
+		int fakerCountInt = Integer.parseInt(fakerCount);
+		Iterator<CreateJobPayload> payloadIterator= FakerDataGenerator.generateFakeCreateJobData(fakerCountInt);
+		return payloadIterator;	
 	}
 }

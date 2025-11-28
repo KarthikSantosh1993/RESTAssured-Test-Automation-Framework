@@ -14,12 +14,10 @@ import org.testng.annotations.Test;
 import com.api.constants.Role;
 import com.api.request.model.CreateJobPayload;
 
-public class CreateJobAPIDataDrivenTest {
+public class CreateJobAPIFakeDataDrivenTest {
 	
-	
-	@Test(description="Verify Create job API response is shown correctly", groups = {"api", "datadriven", "regression", "csv"}, dataProviderClass = com.dataproviders.DataProviderUtils.class, dataProvider= "CreateJobDataProvider")
+	@Test(description="Verify Create job API response is shown correctly", groups = {"api", "datadriven", "regression", "faker"}, dataProviderClass = com.dataproviders.DataProviderUtils.class, dataProvider= "CreateJobFakerDataProvider")
 	public void createJobAPITest(CreateJobPayload createJobPayload) throws IOException {
-
 		given().spec(requestSpecificationWithAuth(Role.FD, createJobPayload)).when().post("/job/create").then()
 				.spec(responseSpec_OK())
 				.body(matchesJsonSchemaInClasspath("response-schema/CreateJobAPIResponseSchema.json"))
