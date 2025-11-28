@@ -15,7 +15,6 @@ public class Demo {
 		System.out.println(faker.address().streetAddress());
 		System.out.println(faker.address().city());
 		
-		
 		System.out.println(faker.number().digits(5));
 		System.out.println(faker.numerify("+91 890########"));
 		System.out.println(faker.internet().emailAddress());
