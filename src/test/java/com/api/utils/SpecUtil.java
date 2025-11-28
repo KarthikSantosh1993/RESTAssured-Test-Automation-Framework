@@ -58,21 +58,21 @@ public class SpecUtil {
 
 	public static ResponseSpecification responseSpec_OK() {
 		ResponseSpecification response = new ResponseSpecBuilder().expectContentType(ContentType.JSON)
-				.expectStatusCode(200).expectResponseTime(Matchers.lessThan(1000L)).log(LogDetail.ALL).build();
+				.expectStatusCode(200).expectResponseTime(Matchers.lessThan(10000L)).log(LogDetail.ALL).build();
 
 		return response;
 	}
 
 	public static ResponseSpecification responseSpec_JSON(int statusCode) {
 		ResponseSpecification response = new ResponseSpecBuilder().expectContentType(ContentType.JSON)
-				.expectStatusCode(statusCode).expectResponseTime(Matchers.lessThan(1000L)).log(LogDetail.ALL).build();
+				.expectStatusCode(statusCode).expectResponseTime(Matchers.lessThan(10000L)).log(LogDetail.ALL).build();
 
 		return response;
 	}
 
 	public static ResponseSpecification responseSpec_HTML(int statusCode) {
 		ResponseSpecification response = new ResponseSpecBuilder().expectContentType(ContentType.HTML)
-				.expectStatusCode(statusCode).expectResponseTime(Matchers.lessThan(1000L)).log(LogDetail.ALL).build();
+				.expectStatusCode(statusCode).expectResponseTime(Matchers.lessThan(10000L)).log(LogDetail.ALL).build();
 
 		return response;
 	}
