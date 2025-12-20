@@ -35,10 +35,8 @@ public class HicariCPDemo {
 			System.out.println(rs.getString("first_name") + "| " + rs.getString("last_name") + "| "
 					+ rs.getString("mobile_number") + "|");
 		}
-
 		long endTime = System.currentTimeMillis();
 		System.out.println("Duration " + (endTime - startTime));
 		dataSource.close();
 	}
-
 }
