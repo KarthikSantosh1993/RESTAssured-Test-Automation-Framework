@@ -42,7 +42,7 @@ public class ConfigManager {
 		}
 	}
 
-	public static String getProperty(String property) throws IOException {
+	public static String getProperty(String property)  {
 		return properties.getProperty(property);
 	}
 }
