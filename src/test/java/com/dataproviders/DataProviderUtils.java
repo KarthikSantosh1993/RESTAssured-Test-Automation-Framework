@@ -10,6 +10,7 @@ import com.api.request.model.CreateJobPayload;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
 import com.api.utils.FakerDataGenerator;
+import com.database.dao.CreateJobPayloadDataDao;
 import com.dataproviders.api.bean.CreateJobBean;
 import com.dataproviders.api.bean.UserBean;
 
@@ -42,5 +43,17 @@ public class DataProviderUtils {
 		int fakerCountInt = Integer.parseInt(fakerCount);
 		Iterator<CreateJobPayload> payloadIterator= FakerDataGenerator.generateFakeCreateJobData(fakerCountInt);
 		return payloadIterator;	
+	}
+	
+	@DataProvider(name = "CreateJobAPIDBDataProvider", parallel = true)
+	public static Iterator<CreateJobPayload> createJobAPIDBDataProvider() {
+		List<CreateJobBean> beanList= CreateJobPayloadDataDao.getCreateJobPayloadData();
+		List<CreateJobPayload> payloadList = new ArrayList<CreateJobPayload>();
+		
+		for(CreateJobBean createJobBean:beanList) {
+			CreateJobPayload payload = CreateJobBeanMapper.mapper(createJobBean);
+			payloadList.add(payload);
+		}
+		return payloadList.iterator();
 	}
 }
