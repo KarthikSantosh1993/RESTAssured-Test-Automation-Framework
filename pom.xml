@@ -63,7 +63,6 @@
 			<version>5.5.6</version>
 		</dependency>
 
-<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -77,7 +76,7 @@
 			<version>7.0.2</version>
 		</dependency>
 
-=======
+
 		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
 		<dependency>
 			<groupId>com.opencsv</groupId>
@@ -91,6 +90,6 @@
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
 		</dependency>
->>>>>>> branch 'main' of https://github.com/KarthikSantosh1993/RESTAssured-Test-Automation-Framework.git
+
 	</dependencies>
 </project>
