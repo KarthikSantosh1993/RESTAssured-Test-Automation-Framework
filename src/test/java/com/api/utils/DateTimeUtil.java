@@ -3,9 +3,9 @@ package com.api.utils;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-public class DataTimeUtil {
+public class DateTimeUtil {
 
-	private DataTimeUtil() {
+	private DateTimeUtil() {
 
 	}
 

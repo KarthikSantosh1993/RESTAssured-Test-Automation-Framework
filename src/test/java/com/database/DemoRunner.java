@@ -15,6 +15,5 @@ public class DemoRunner {
 		
 		System.out.println("Duration of test " + (endTime - startTime) + " ms");
 	}
-
 }
  

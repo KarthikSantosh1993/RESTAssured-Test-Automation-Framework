@@ -1,0 +1,11 @@
+
+<suite name="Phoenix API Test Suite" verbose="1">
+
+  <test name="Inwarrenty Flow - Data Driven Test">
+    <classes>
+      <class name="com.api.tests.datadriven.LoginAPIDataDrivenTest"/>
+      <class name="com.api.tests.datadriven.CreateJobAPIFakeDataDrivenTest"/>
+      <class name="com.api.tests.datadriven.CreateJobAPIDataDrivenTest"/>
+    </classes>
+  </test>
+</suite>
