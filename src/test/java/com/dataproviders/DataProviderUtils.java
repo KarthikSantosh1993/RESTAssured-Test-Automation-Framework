@@ -55,6 +55,8 @@ public class DataProviderUtils {
 	@DataProvider(name = "CreateJobAPIJsonDataProvider", parallel = true)
 	public static Iterator<CreateJobPayload> createJobAPIJsonDataProvider() {
 		return JsonReaderUtil.loadJSON("testdata/CreateJobAPIData.json", CreateJobPayload[].class);
+	}
+	
 	@DataProvider(name = "CreateJobAPIDBDataProvider", parallel = true)
 	public static Iterator<CreateJobPayload> createJobAPIDBDataProvider() {
 		List<CreateJobBean> beanList= CreateJobPayloadDataDao.getCreateJobPayloadData();
