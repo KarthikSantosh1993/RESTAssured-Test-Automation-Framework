@@ -1,0 +1,122 @@
+[
+ {
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 1,
+    "customer": {
+        "first_name": "Karthik",
+        "last_name": "Duruvasula",
+        "mobile_number": "7897897890",
+        "mobile_number_alt": "",
+        "email_id": "krthiksantosh@gmail.com",
+        "email_id_alt": "krthiksantosh@gmail.com"
+    },
+    "customer_address": {
+        "flat_number": "2A",
+        "apartment_name": "habitat",
+        "street_name": "flat no:2A, a, Tellapur",
+        "landmark": "SR Indoor swimming pool",
+        "area": "NALLAGANDLA",
+        "pincode": "505032",
+        "country": "India",
+        "state": "Telangana"
+    },
+    "customer_product": {
+        "dop": "2025-05-07T18:30:00.000Z",
+        "serial_number": "68738919125118",
+        "imei1": "68738919125118",
+        "imei2": "68738919125118",
+        "popurl": "2025-05-07T18:30:00.000Z",
+        "product_id": 1,
+        "mst_model_id": 1
+    },
+    "problems": [
+        {
+            "id": 1,
+            "remark": "Battery Issue"
+        }
+    ]
+ },
+
+ {
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 1,
+    "customer": {
+        "first_name": "Karthik",
+        "last_name": "Duruvasula",
+        "mobile_number": "7897897890",
+        "mobile_number_alt": "",
+        "email_id": "krthiksantosh@gmail.com",
+        "email_id_alt": "krthiksantosh@gmail.com"
+    },
+    "customer_address": {
+        "flat_number": "2A",
+        "apartment_name": "habitat",
+        "street_name": "flat no:2A, a, Tellapur",
+        "landmark": "SR Indoor swimming pool",
+        "area": "NALLAGANDLA",
+        "pincode": "505032",
+        "country": "India",
+        "state": "Telangana"
+    },
+    "customer_product": {
+        "dop": "2025-05-07T18:30:00.000Z",
+        "serial_number": "78738919125118",
+        "imei1": "78738919125118",
+        "imei2": "78738919125118",
+        "popurl": "2025-05-07T18:30:00.000Z",
+        "product_id": 1,
+        "mst_model_id": 1
+    },
+    "problems": [
+        {
+            "id": 1,
+            "remark": "Battery Issue"
+        }
+    ]
+ },
+
+ {
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 1,
+    "customer": {
+        "first_name": "Karthik",
+        "last_name": "Duruvasula",
+        "mobile_number": "7897897890",
+        "mobile_number_alt": "",
+        "email_id": "krthiksantosh@gmail.com",
+        "email_id_alt": "krthiksantosh@gmail.com"
+    },
+    "customer_address": {
+        "flat_number": "2A",
+        "apartment_name": "habitat",
+        "street_name": "flat no:2A, a, Tellapur",
+        "landmark": "SR Indoor swimming pool",
+        "area": "NALLAGANDLA",
+        "pincode": "505032",
+        "country": "India",
+        "state": "Telangana"
+    },
+    "customer_product": {
+        "dop": "2025-05-07T18:30:00.000Z",
+        "serial_number": "88738919125118",
+        "imei1": "88738919125118",
+        "imei2": "88738919125118",
+        "popurl": "2025-05-07T18:30:00.000Z",
+        "product_id": 1,
+        "mst_model_id": 1
+    },
+    "problems": [
+        {
+            "id": 1,
+            "remark": "Battery Issue"
+        }
+    ]
+ }
+
+]
